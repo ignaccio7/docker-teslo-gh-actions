@@ -24,9 +24,9 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build Docker image
       run: |
-        docker build -t edwardrg/teslo-shop-gh-actions:2.0.0 .
+        docker build -t edwardrg/teslo-gh-actions:2.0.0 .
     - name: Push Docker image
       run: |
-        docker push edwardrg/teslo-shop-gh-actions:2.0.0
+        docker push edwardrg/teslo-gh-actions:2.0.0
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
