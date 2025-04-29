@@ -2,14 +2,12 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +20,13 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        echo "Iniciando login el docker hub"
+        echo "Login el docker hub"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        echo "Fin del login"
+    - name: Build Docker image
+      run: |
+        docker build -t edwardrg/teslo-shop-gh-actions:2.0.0 .
+    - name: Push Docker image
+      run: |
+        docker push edwardrg/teslo-shop-gh-actions:2.0.0
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
