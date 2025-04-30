@@ -21,7 +21,7 @@ jobs:
       with:
         major_pattern: "major:" # hara un nuevo tag major si en el commit colocamos un major:
         minor_pattern: "feat:" # hara un nuevo tag minor si en el commit colocamos un major:
-        version : "${major}.${minor}.${patch}-prerelease${increment}" # cada commit que hagamos incrementara el increment
+        version_format: "${major}.${minor}.${patch}-prerelease${increment}" # cada commit que hagamos incrementara el increment
       id: version-automatic # este es un id con el que nosotros hacemos referencia a este paso
         
     - name: Docker login
