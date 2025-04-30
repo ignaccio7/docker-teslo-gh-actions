@@ -32,7 +32,7 @@ jobs:
       run: |
         echo "Login el docker hub"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        echo "New versioin is $NEW_VERSION !!!!!!!!!!!!!!!"
+        echo "New version is $NEW_VERSION !!!!!!!!!!!!!!!"
     
 #    - name: Build Docker image
 #      run: |
